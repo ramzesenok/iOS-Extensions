@@ -14,7 +14,7 @@ extension UITableView {
      Example: `tableView.register(UINib(nibName: "SomeCell", bundle: nil), forCellReuseIdentifier: "SomeCell"` becomes `tableView.register(SomeCell.self)`
      */
     func register(_ cell: UITableViewCell.Type) {
-        self.register(UINib(nibName: String(describing: cell), bundle: nil), forCellReuseIdentifier: String(describing: cell))
+        register(UINib(nibName: String(describing: cell), bundle: nil), forCellReuseIdentifier: String(describing: cell))
     }
     
     /*
@@ -22,9 +22,7 @@ extension UITableView {
     Example: `tableView.register(UINib(nibName: "SomeCell", bundle: nil), forCellReuseIdentifier: "SomeCell"` becomes `tableView.register(SomeCell.self)`
     */
     func register(_ cells: UITableViewCell.Type...) {
-        cells.forEach {
-            register($0)
-        }
+        cells.forEach(register)
     }
     
     /*
