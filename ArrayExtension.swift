@@ -25,3 +25,12 @@ extension Array where Element: Collection {
         }
     }
 }
+
+extension Array where Element: Hashable {
+    /*
+     Returns back an array of the same Elements but without any duplicates
+     */
+    func removedDuplicates() -> Self {
+        return Array(Set(self))
+    }
+}
